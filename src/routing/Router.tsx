@@ -1,21 +1,25 @@
 import React from "react"
 import { NavigationContainer } from "@react-navigation/native"
-import { createStackNavigator } from "@react-navigation/stack"
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 
-import { Landing } from "../screens/"
-import { RootStackParamList } from "./types"
+import { GearList, Landing } from "../screens/"
+import { HomeTabParamList } from "./types"
 
-const RootStack = createStackNavigator<RootStackParamList>()
+const BottomTabs = createBottomTabNavigator<HomeTabParamList>()
 
-function Router({}) {
+function Router({}): JSX.Element {
   return (
 		<NavigationContainer>
-			<RootStack.Navigator initialRouteName="Landing">
-				<RootStack.Screen 
+			<BottomTabs.Navigator initialRouteName="Landing">
+				<BottomTabs.Screen 
 					name="Landing"
 					component={Landing}
 				/>
-			</RootStack.Navigator>
+				<BottomTabs.Screen
+					name="Gear"
+					component={GearList}
+				/>
+			</BottomTabs.Navigator>
 		</NavigationContainer>
   )
 }
