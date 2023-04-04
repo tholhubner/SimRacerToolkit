@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 
 import { GearList, Landing } from "../screens/"
 import { HomeTabParamList } from "./types"
+import { ResourcesList } from "../screens/ResourcesList"
 
 const BottomTabs = createBottomTabNavigator<HomeTabParamList>()
 
@@ -18,6 +19,10 @@ function Router({}): JSX.Element {
 				<BottomTabs.Screen
 					name="Gear"
 					component={GearList}
+				/>
+				<BottomTabs.Screen
+					name="Resources"
+					component={ResourcesList}
 				/>
 			</BottomTabs.Navigator>
 		</NavigationContainer>
